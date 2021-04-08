@@ -39,6 +39,15 @@ struct Player {
 	double age_;
 };
 
+class FileAccessError : public std::exception {
+public:
+	FileAccessError() noexcept = default;
+	~FileAccessError() = default;
+	virtual const char* what() const noexcept {
+		return "FSTREAM::could not access file";
+	}
+};
+
 std::size_t CountLinesInTextFile(const char*&);
 void ReadDataFromTextFile(const char*&, Array<Player>&);
 void WriteDataToConsole(Array<Player>&);
@@ -61,7 +70,7 @@ int main() {
 			return 2;
 		}
 	}
-	catch (const std::exception& err) {
+	catch (const FileAccessError& err) {
 		std::cerr << err.what() << std::endl;
 		return 1;
 	}
@@ -78,14 +87,14 @@ std::size_t CountLinesInTextFile(const char*& file_name) {
 					std::istreambuf_iterator<char>(file),
 					std::istreambuf_iterator<char>(),
 					'\n'
-				)		
-			)	
+				)
+			)
 		};
 		file.close();
 		return res - 1;
 	}
 	else
-		throw std::runtime_error("COUNTLINESINTEXTFILE::IFSTREAM::could not open file");
+		throw FileAccessError();
 }
 
 void ReadDataFromTextFile(const char*& file_name, Array<Player>& arr) {
@@ -119,7 +128,7 @@ void ReadDataFromTextFile(const char*& file_name, Array<Player>& arr) {
 		file.close();
 	}
 	else
-		throw std::runtime_error("READDATAFROMTEXTFILE::IFSTREAM::could not open file");
+		throw FileAccessError();
 }
 
 void WriteDataToConsole(Array<Player>& arr) {
@@ -135,13 +144,13 @@ void WriteDataToConsole(Array<Player>& arr) {
 void WriteDataToBinaryFile(const char*& file_name, Array<Player>& arr) {
 	std::ofstream file{ file_name, std::ios::binary };
 	if (file.is_open()) {
-		unsigned count{ arr.Size() };
+		unsigned count = arr.Size();
 		file.write(reinterpret_cast<char*>(&count), sizeof(count));
 		file.write(reinterpret_cast<char*>(arr.Data()), sizeof(Player) * static_cast<__int64>(count));
 		file.close();
 	}
 	else
-		throw std::runtime_error("WRITEDATATOBINARYFILE::OFSTREAM::could not open file");
+		throw FileAccessError();
 }
 
 Array<Player> ReadDataFromBinaryFile(const char*& file_name) {
@@ -156,5 +165,5 @@ Array<Player> ReadDataFromBinaryFile(const char*& file_name) {
 		return arr;
 	}
 	else
-		throw std::runtime_error("READDATAFROMBINARYFILE::IFSTREAM::could not open file");
+		throw FileAccessError();
 }
