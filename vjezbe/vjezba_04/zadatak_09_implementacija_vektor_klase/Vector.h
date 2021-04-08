@@ -1,11 +1,5 @@
 #pragma once
 
-// VECTOR CLASS	- najbolje radi s korisnickim tipovima podataka i jednostavnim tipovima podataka
-// u fileu se nalazi primjer Vektor2i tipa podataka koji ima definirane sve konstruktore,
-// Vector klasa radi izvrsno s tim tipom podatka
-// radi na nacin da maksimalno move-a objekte, a ne da ih kopira
-// klasa ne podrzava std::string (testirano), std::vector i ostale STL tipove podataka
-
 #include <initializer_list>
 #include <algorithm>
 #include <utility>
@@ -472,12 +466,12 @@ public:
 	void PushBack(const_reference value) {
 		if (m_Size >= m_Capacity)
 			_ReAllocate(_TestCapacity(_IncreaseCapacity(m_Capacity)));
-		m_Data[m_Size++] = value;
+		new(&m_Data[m_Size++]) value_type{ value };
 	}
 	void PushBack(rvalue_reference value) noexcept {
 		if (m_Size >= m_Capacity)
 			_ReAllocate(_TestCapacity(_IncreaseCapacity(m_Capacity)));
-		m_Data[m_Size++] = std::move(value);
+		new(&m_Data[m_Size++]) value_type{ std::move(value) };
 	}
 
 	template <typename... Args>

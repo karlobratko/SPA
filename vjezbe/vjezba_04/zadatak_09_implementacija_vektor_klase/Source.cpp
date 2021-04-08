@@ -15,13 +15,28 @@ void Printer(const Vector<_Ty>& vec) {
 }
 
 int main() {
-	/*Vector<char> vec{ 'k', 'a', 'r', 'l', 'o' };
-	char x = ' ';
-	vec.PushBack(x);
-	vec.EmplaceBack('d');
-	vec.Insert(vec.begin(), 'r');
-	vec.Erase(vec.begin() + 1);
-	Printer(vec);*/
+
+	Vector<std::string> arr{ "asdf", "1234" };
+	arr.PushBack("1");
+	arr.PushBack("2");
+	arr.PushBack("3");
+	arr.PushBack("4");
+	arr.PushBack("5");
+	arr.PopBack();
+	arr.PushBack("6");
+	arr.PushBack("7");
+	arr.PopBack();
+	arr.PushBack("8");
+	arr.PushBack("9");
+	arr.PushBack("10");
+	arr.PopBack();
+	std::for_each(
+		std::begin(arr),
+		std::end(arr),
+		[](std::string& x) -> void {
+			std::cout << x << std::endl;
+		}
+	);
 
 	Vector<Vector2i> vec{ { 1, 1 }, { 2, 2 }, { 3, 3 } };
 	Vector2i x{ 4, 4 };
