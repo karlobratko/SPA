@@ -3,9 +3,9 @@
 #include <chrono>
 #include <ostream>
 
-class Benchmarker {
+class benchmarker_t {
 public:
-	Benchmarker() : start{ std::chrono::high_resolution_clock::now() } {}
+	benchmarker_t() : start{ std::chrono::high_resolution_clock::now() } {}
 	long long TimeTaken() {
 		end = std::chrono::high_resolution_clock::now();
 		return std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();

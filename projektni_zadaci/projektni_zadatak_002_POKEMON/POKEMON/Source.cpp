@@ -2,23 +2,26 @@
 
 int main() {
 	WriteHeaderToConsole();
-	WaitUserInput("Press any key to continue...");
+	WaitUserToPressKey();
 
-	ProgramState program_state{ ProgramState::VOID };
-	char input_program_state{};
-	std::vector<Pokemon> vec{};
+	program_state_t program_state{ program_state_t::VOID };
+	std::vector<pokemon_t> vec{};
+
 	do {
 		try {
-			ReadProgramStateFromConsole(input_program_state);
-			DetermineProgramState(input_program_state, program_state);
-			ManageState(program_state, vec);
+			DetermineProgramState(
+				ReadProgramStateFromConsole(), 
+				program_state
+			);
+			ManageProgramState(program_state, vec);
 		}
 		catch (const std::exception& err) {
+			program_state = program_state_t::VOID;
 			ClearConsole();
-			std::cout << err.what() << std::endl;
+			WriteToConsole(err.what());
+			WaitUserToPressKey();
 		}
 
-	} while (program_state != ProgramState::EXIT);
-
+	} while (program_state != program_state_t::EXIT);
 	return 0;
 }

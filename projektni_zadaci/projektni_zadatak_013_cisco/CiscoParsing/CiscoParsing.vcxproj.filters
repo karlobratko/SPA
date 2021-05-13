@@ -18,41 +18,24 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Core.cpp">
+    <ClCompile Include="date_t.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pokemon_t.cpp">
+    <ClCompile Include="certificate_t.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="SPA_PROJ_002_POKEMON.docx" />
-    <None Include="SPA_PROJ_002_POKEMON_data.csv" />
-    <None Include="path.dat" />
+    <Text Include="cisco_dat.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="program_state_t.h">
+    <ClInclude Include="date_t.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Core.h">
+    <ClInclude Include="certificate_t.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="pokemon_t.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="benchmarker_t.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="finally_t.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="program_state_except_t.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="file_t.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="file_access_except_t.h">
+    <ClInclude Include="FileAccessError.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

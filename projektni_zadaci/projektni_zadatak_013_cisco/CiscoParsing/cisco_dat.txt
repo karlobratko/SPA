@@ -1,0 +1,9 @@
+Profile Name     Profile     Certificate  Certificate     Certificate     User DN       
+                 Password    Type         Renewal Start   Private Key          
+                 Policy                   Date (GMT)      Expiry (GMT)    
+------------------------------------------------------------------------------------------------------------------
+HSM1: ****  HumanPwd    Signing      06 Apr 2011     15 Jul 2011     cn=***,o=***,o=***  
+HSM1: ****  AppliPwd    Signing      29 Aug 2011     07 Dec 2011     cn=***,o=***,o=***  
+HSM1: ****  AppliPwd    Signing      29 Aug 2011     07 Dec 2011     cn=***,o=***,o=***  
+HSM1: ****  HumanPwd    Encryption   05 Oct 2011     13 Jan 2012     cn=***,o=***,o=***  
+HSM1: ****  HumanPwd    Encryption   12 Jan 2012     21 Apr 2012     cn=***,o=***,o=***
