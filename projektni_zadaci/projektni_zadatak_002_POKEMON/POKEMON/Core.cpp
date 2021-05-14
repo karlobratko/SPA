@@ -509,6 +509,9 @@ void ManageStateSpeedogram(std::vector<pokemon_t>& vec) {
 }
 
 void ManageStateTransaction(std::vector<pokemon_t>& vec) {
+	if (vec.empty())
+		throw std::runtime_error("MANAGESTATETRANSACTION::no data to process, empty vector");
+
 	std::string line{};
 	std::istringstream iss{};
 	std::string command{};
@@ -549,7 +552,7 @@ void ManageStateTransaction(std::vector<pokemon_t>& vec) {
 			transaction_stack.push(new_vec);
 			
 		}
-		else if (command == "ROLLBACK")
+		else if (command == "ROLLBACK" && transaction_stack.size() > 1)
 			transaction_stack.pop();
 
 		iss.clear();
