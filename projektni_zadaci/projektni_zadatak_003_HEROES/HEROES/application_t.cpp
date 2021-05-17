@@ -40,7 +40,7 @@ void application_t::determine_state() {
 	try {
 		program_state_ = command_state.at(read_state());
 	}
-	catch (const std::exception&) {
+	catch (...) {
 		throw_e("invalid input");
 	}
 }
