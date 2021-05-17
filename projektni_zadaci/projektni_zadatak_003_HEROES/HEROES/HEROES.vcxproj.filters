@@ -18,17 +18,54 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="application_t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hero_t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="database_t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="powers_t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="SPA_PROJ_003_HEROES_data_1.csv" />
     <None Include="SPA_PROJ_003_HEROES_data_2.csv" />
-    <None Include="SPA_PROJ_004_NETFLIX.docx" />
+    <None Include="path.dat" />
+    <None Include="SPA_PROJ_003_HEROES.docx" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="file_except_t.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="file_t.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="application_t.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="console_t.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="progstate_t.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="application_except_t.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hero_t.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="database_t.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="benchmarker_t.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="powers_t.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

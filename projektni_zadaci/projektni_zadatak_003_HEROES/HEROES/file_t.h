@@ -7,6 +7,7 @@
 
 class file_t{
 public:
+	file_t() {}
 	file_t(const char* file_name, std::ios::openmode open_mode) : file_{ file_name, open_mode } {}
 	file_t(const file_t&) = delete;
 	file_t(file_t&& other) noexcept : file_{ std::move(other.file_) } {}
