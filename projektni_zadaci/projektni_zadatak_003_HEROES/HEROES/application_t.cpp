@@ -3,8 +3,6 @@
 const char* bin_file_path{ "path.dat" };
 const char* csv_file_data_01{ "SPA_PROJ_003_HEROES_data_1.csv" };
 const char* csv_file_data_02{ "SPA_PROJ_003_HEROES_data_2.csv" };
-const char* bin_file_data_01{ "data_01.dat" };
-const char* bin_file_data_02{ "data_01.dat" };
 
 namespace std {
 	std::ostream& operator<<(std::ostream& os, const std::pair<std::string, unsigned>& pair) {

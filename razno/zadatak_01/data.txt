@@ -1,0 +1,4 @@
+Napisite program koji u mainu ucitava naziv datoteke od korisnika, 
+a zatim u funkciji otvara datoteku te ispisuje njen sadrzaj. sto god 
+da se dogodi, program se ne smije srusiti! Koristite ili tradicionalni 
+ili moderni nacin upravljanja pogreskama.
