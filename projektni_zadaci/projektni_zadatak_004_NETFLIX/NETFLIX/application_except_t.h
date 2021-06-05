@@ -12,6 +12,6 @@ public:
 
 private:
 	static constexpr const char* base{ "APPLICATION::" };
-	static constexpr const char* default_msg{ "application_t error" };
+	static constexpr const char* default_msg{ "application error" };
 
 };

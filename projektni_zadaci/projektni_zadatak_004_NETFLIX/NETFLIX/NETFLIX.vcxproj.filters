@@ -17,6 +17,9 @@
   <ItemGroup>
     <None Include="SPA_PROJ_004_NETFLIX_data.csv" />
     <None Include="SPA_PROJ_004_NETFLIX.docx" />
+    <None Include="path.dat" />
+    <None Include="type.dat" />
+    <None Include="data.json" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -26,6 +29,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="application_t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="multimedia_t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="date_t.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="database_t.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -58,6 +70,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="random_except_t.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="multimedia_t.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="date_t.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="database_t.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

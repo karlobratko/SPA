@@ -14,6 +14,6 @@ public:
 
 private:
 	static constexpr const char* base{ "RANDOM::" };
-	static constexpr const char* default_msg{ "random_t error" };
+	static constexpr const char* default_msg{ "random generator error" };
 
 };

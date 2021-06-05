@@ -19,10 +19,13 @@ public:
 	~file_t();
 
 	void is_open() const;
-	std::streampos position(std::streamoff, std::ios_base::seekdir);
+	std::streampos set_position(std::streampos);
+	std::streampos set_offset(std::streamoff, std::ios_base::seekdir = std::ios_base::cur);
+	std::streampos get_position();
 	std::streampos beg();
 	std::streampos end();
 	void reuse();
+	void clear_flags(std::ios_base::iostate = std::ios_base::goodbit);
 	std::int64_t size();
 	std::string getline(char = '\n');
 
@@ -34,4 +37,3 @@ private:
 	std::fstream file_;
 
 };
-

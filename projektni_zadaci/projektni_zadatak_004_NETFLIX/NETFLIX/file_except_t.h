@@ -12,6 +12,6 @@ public:
 
 private:
 	static constexpr const char* base{ "FILE::" };
-	static constexpr const char* default_msg{ "file_t error" };
+	static constexpr const char* default_msg{ "fstream error" };
 
 };

@@ -1,4 +1,5 @@
 ﻿#include "application_t.h"
+#include "date_t.h"
 
 std::vector<const char*> header{
 " __   __     ______     ______   ______   __         __     __  __    ",

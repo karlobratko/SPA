@@ -140,12 +140,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="data.json" />
+    <None Include="path.dat" />
     <None Include="SPA_PROJ_004_NETFLIX.docx" />
     <None Include="SPA_PROJ_004_NETFLIX_data.csv" />
+    <None Include="type.dat" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="application_t.cpp" />
+    <ClCompile Include="database_t.cpp" />
+    <ClCompile Include="date_t.cpp" />
     <ClCompile Include="file_t.cpp" />
+    <ClCompile Include="multimedia_t.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -154,9 +160,12 @@
     <ClInclude Include="appstate_t.h" />
     <ClInclude Include="benchmarker_t.h" />
     <ClInclude Include="console_t.h" />
+    <ClInclude Include="database_t.h" />
+    <ClInclude Include="date_t.h" />
     <ClInclude Include="except_t.h" />
     <ClInclude Include="file_except_t.h" />
     <ClInclude Include="file_t.h" />
+    <ClInclude Include="multimedia_t.h" />
     <ClInclude Include="random_except_t.h" />
     <ClInclude Include="random_t.h" />
   </ItemGroup>
