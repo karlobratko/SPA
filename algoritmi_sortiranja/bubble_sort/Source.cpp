@@ -20,18 +20,18 @@
 #include <random>
 #include <functional>
 
-template <typename ForwardIterator, typename Distribution, typename Function>
-void random_fill(ForwardIterator begin, ForwardIterator end, Distribution distr, Function func) {
-  std::generate(begin, end, std::bind<typename std::iterator_traits<ForwardIterator>::value_type>(distr, func));
+template <typename ForwardIterator, typename Distribution, typename Generator>
+void random_fill(ForwardIterator begin, ForwardIterator end, Distribution&& distr, Generator&& gen) {
+  std::generate(begin, end, std::bind<typename std::iterator_traits<ForwardIterator>::value_type>(std::forward<Distribution>(distr), std::forward<Generator>(gen)));
 }
 
 template <typename InputIterator>
-void output(InputIterator begin, InputIterator end, std::ostream& os = std::cout, const std::string& delim = " ") {
-  std::copy(begin, end, std::ostream_iterator<typename std::iterator_traits<InputIterator>::value_type>(os, delim.c_str()));
+void output(InputIterator begin, InputIterator end, std::ostream& os = std::cout, const char* delim = " ") {
+  std::copy(begin, end, std::ostream_iterator<typename std::iterator_traits<InputIterator>::value_type>(os, delim));
 }
 
 template <typename RandomAccessIterator, typename Predicate>
-void bubble_sort(RandomAccessIterator begin, RandomAccessIterator end, Predicate predicate) {
+void bubble_sort(RandomAccessIterator begin, RandomAccessIterator end, Predicate&& predicate) {
   bool swapped{ true };
   while (begin != end && swapped) {
     end = std::prev(end);
@@ -46,8 +46,8 @@ void bubble_sort(RandomAccessIterator begin, RandomAccessIterator end, Predicate
 }
 
 template <typename ForwardIterator, typename Predicate>
-void sorted_test(ForwardIterator begin, ForwardIterator end, Predicate predicate, std::ostream& os = std::cout) {
-  os << "sorted: " << std::boolalpha << std::is_sorted(begin, end, predicate) << std::noboolalpha << std::endl;
+void sorted_test(ForwardIterator begin, ForwardIterator end, Predicate&& predicate, std::ostream& os = std::cout) {
+  os << "sorted: " << std::boolalpha << std::is_sorted(begin, end, std::forward<Predicate>(predicate)) << std::noboolalpha << std::endl;
 }
 
 int main() {

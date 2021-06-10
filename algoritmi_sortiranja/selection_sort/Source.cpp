@@ -23,8 +23,8 @@
 #include <functional>
 
 template <typename ForwardIterator, typename Distribution, typename Generator>
-void random_fill(ForwardIterator begin, ForwardIterator end, Distribution distr, Generator gen) {
-	std::generate(begin, end, std::bind<typename std::iterator_traits<ForwardIterator>::value_type>(distr, gen));
+void random_fill(ForwardIterator begin, ForwardIterator end, Distribution&& distr, Generator&& gen) {
+	std::generate(begin, end, std::bind<typename std::iterator_traits<ForwardIterator>::value_type>(std::forward<Distribution>(distr), std::forward<Generator>(gen)));
 }
 
 template <typename InputIterator>
@@ -33,15 +33,15 @@ void output(InputIterator begin, InputIterator end, std::ostream& os = std::cout
 }
 
 template <typename ForwardIterator, typename Predicate>
-void selection_sort(ForwardIterator begin, ForwardIterator end, Predicate predicate) {
+void selection_sort(ForwardIterator begin, ForwardIterator end, Predicate&& predicate) {
 	for (auto it = begin; it != end; it = std::next(it)) {
-		std::iter_swap(it, std::min_element(it, end, predicate));
+		std::iter_swap(it, std::min_element(it, end, std::forward<Predicate>(predicate)));
 	}
 }
 
 template <typename ForwardIterator, typename Predicate>
-void sorted_test(ForwardIterator begin, ForwardIterator end, Predicate predicate, std::ostream& os = std::cout) {
-	os << "sorted: " << std::boolalpha << std::is_sorted(begin, end, predicate) << std::noboolalpha << std::endl;
+void sorted_test(ForwardIterator begin, ForwardIterator end, Predicate&& predicate, std::ostream& os = std::cout) {
+	os << "sorted: " << std::boolalpha << std::is_sorted(begin, end, std::forward<Predicate>(predicate)) << std::noboolalpha << std::endl;
 }
 
 int main() {
