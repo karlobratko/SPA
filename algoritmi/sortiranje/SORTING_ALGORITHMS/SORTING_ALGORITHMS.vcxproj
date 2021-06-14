@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{8a4db9f4-1481-4279-9588-8a7be9de379d}</ProjectGuid>
-    <RootNamespace>selectionsort</RootNamespace>
+    <ProjectGuid>{a8b69c6e-6d72-415e-b993-44f308aca066}</ProjectGuid>
+    <RootNamespace>SORTINGALGORITHMS</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -140,6 +140,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bogo_sort.h" />
+    <ClInclude Include="bubble_sort.h" />
+    <ClInclude Include="core.h" />
+    <ClInclude Include="heap_sort.h" />
+    <ClInclude Include="insertion_sort.h" />
+    <ClInclude Include="merge_sort.h" />
+    <ClInclude Include="permutation_sort.h" />
+    <ClInclude Include="quick_sort.h" />
+    <ClInclude Include="selection_sort.h" />
+    <ClInclude Include="shell_sort.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
